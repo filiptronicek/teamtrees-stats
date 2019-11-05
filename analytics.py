@@ -37,7 +37,6 @@ def main():
         loops = 0
         gained_total = 0
         while True:
-            init()
             now = datetime.now()
             time.sleep(DELAY - 0.1)
             trees_now = get_trees()
