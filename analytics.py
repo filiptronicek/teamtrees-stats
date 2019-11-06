@@ -9,22 +9,6 @@ DELAY = 1
 date = datetime.now()
 
 
-def init():
-    date = datetime.now()
-    #We read the existing text from file in READ mode
-    src=open("data/"+date.strftime("%Y.%m.%d")+"-count.csv","r")
-    fline="count,date\n"    #Prepending string
-    oline=src.readlines()
-    #Here, we prepend the string we want to on first line
-    oline.insert(0,fline)
-    src.close()
-     
-     
-    #We again open the file in WRITE mode 
-    src=open("data/"+date.strftime("%Y.%m.%d")+"-count.csv","w")
-    src.writelines(oline)
-    src.close()
-
 def get_trees():
     r = requests.get('https://teamtrees.org')
     return int(re.search('data-count="(\\d+)"', r.text).group(1))
