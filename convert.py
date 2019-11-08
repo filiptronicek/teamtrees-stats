@@ -11,7 +11,7 @@ with open('data/old-data.csv') as csv_file:
             line_count += 1
         else:
             now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(round(int(row[0])) / 1000))
-            print(f'\t{row[0]} is the time  {row[1]}')
+            print(f'\t{now} is the time | {row[1]} was the donation count')
             WriteData = open("data-old/"+time.strftime("%Y-%m-%d", time.localtime(round(int(row[0])) / 1000))+"-count.csv", "a")   
             WriteData.write(row[1]+","+ now +"\n")
             WriteData.close()
